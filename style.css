@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  padding: 0px 20px;
 }
 
 .flex-container {
@@ -14,7 +15,6 @@ body {
 .post-box {
   flex: 1 1 calc(33.33% - 20px);
   max-width: calc(33.33% - 20px);
-  border: 1px solid #ccc;
   box-sizing: border-box;
   text-decoration: none; /* Remove default link underline */
 }
