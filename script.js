@@ -9,12 +9,6 @@ data.forEach(post => {
   const box = document.createElement('div');
   box.classList.add('post-box'); // You can style this class in CSS for formatting
 
-  const title = document.createElement('h2');
-  title.innerHTML = post.title.rendered;
-
-  const excerpt = document.createElement('p');
-  excerpt.innerHTML = post.excerpt.rendered;
-
   const image = document.createElement('img');
   if (post.featured_media !== 0) {
     fetch(`https://testwp1.braincrop.net/wp-json/wp/v2/media/${post.featured_media}`)
@@ -23,6 +17,12 @@ data.forEach(post => {
         image.src = mediaData.source_url;
       });
   }
+
+  const title = document.createElement('h2');
+  title.innerHTML = post.title.rendered;
+
+  const excerpt = document.createElement('p');
+  excerpt.innerHTML = post.excerpt.rendered;
 
   const link = document.createElement('a');
   link.href = post.link;
