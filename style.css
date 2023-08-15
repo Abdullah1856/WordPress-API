@@ -1,37 +1,43 @@
 /* styles.css */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.post-box {
+  flex: 1 1 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  text-decoration: none; /* Remove default link underline */
+}
+
+.post-box h2 {
+  margin-top: 0; /* Remove default margin for headings */
+}
+
+.post-box img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for consistent box size */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+}
+
+@media (max-width: 767px) {
   .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .post-box {
-    flex: 1 1 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .post-box img {
+    flex: 1 1 100%;
     max-width: 100%;
-    height: auto;
   }
-  
-  @media (max-width: 767px) {
-    .flex-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .post-box {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-  }
+}
