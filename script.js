@@ -10,6 +10,19 @@ fetch(endpoint)
       box.classList.add('post-box');
       box.href = post.link;
 
+      const title = document.createElement('h2');
+      title.innerHTML = post.title.rendered;
+
+      const excerpt = document.createElement('p');
+      const maxLength = 50; // Set your desired word limit for the excerpt
+
+      // Remove HTML tags and limit to desired word count
+      const sanitizedExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
+      const words = sanitizedExcerpt.split(' ');
+      const limitedExcerpt = words.slice(0, maxLength).join(' ');
+
+      excerpt.innerHTML = limitedExcerpt;
+
       const image = document.createElement('img');
       if (post.featured_media !== 0) {
         fetch(`https://testwp1.braincrop.net/wp-json/wp/v2/media/${post.featured_media}`)
@@ -19,16 +32,10 @@ fetch(endpoint)
           });
       }
 
-      const title = document.createElement('h2');
-      title.innerHTML = post.title.rendered;
-
-      const excerpt = document.createElement('p');
-      excerpt.innerHTML = post.excerpt.rendered;
-
       box.appendChild(image);
       box.appendChild(title);
       box.appendChild(excerpt);
-
+  
       postContainer.appendChild(box);
     });
   })
