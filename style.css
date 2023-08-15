@@ -4,6 +4,12 @@ body {
     padding: 0 20px;
   }
 
+  h1 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 56px;
+    color: #0a2540;
+  }
+
   h2 {
     font-family: 'PT Sans', sans-serif;
     color: #0a2540;
