@@ -2,7 +2,8 @@
 body {
     margin: 60px 0px 60px 0px;
     padding: 0 20px;
-  }
+    background-image: url(https://raw.githubusercontent.com/Abdullah1856/WordPress-Post-API/main/media/JPG-BG-SHADES.png);
+}
 
 h1 {
     font-family: 'PT Sans', sans-serif;
